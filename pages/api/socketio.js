@@ -11,7 +11,9 @@ const startServer = (req, res) => {
 		io = new Server(res.socket.server);
 		res.socket.server.io = io;
 
+		// listen for connection
 		io.on("connection", socket => {
+			// echo
 			socket.on("echo", message => {
 				console.log("echo", message);
 				socket.emit("echo", message);

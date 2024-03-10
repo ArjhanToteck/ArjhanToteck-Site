@@ -3,7 +3,7 @@ const Projects = require("./Projects");
 export default function Index() {
 	return (
 		<main>
-			<h1 class="glitch" data-text="Welcome.">Welcome.</h1>
+			<h1 className="glitch" data-text="Welcome.">Welcome.</h1>
 
 
 			I'm Arjhan. I make stuff sometimes.
