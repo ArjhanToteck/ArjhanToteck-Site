@@ -4,6 +4,11 @@ body {
 	font-family: "Courier New", Courier, monospace;
 }
 
+invertedColors {
+	background-color: white;
+	color: #262626
+}
+
 c {
 	background-color: #131313;
 	border-radius: 5px;
