@@ -1,3 +1,4 @@
 [submodule "projects/basicChatroom"]
 	path = projects/basicChatroom
 	url = https://github.com/ArjhanToteck/Basic-Chatroom.git
+	branch = update-for-next
