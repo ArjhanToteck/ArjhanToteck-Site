@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 
 export let io;
 
-const ioHandler = (req, res) => {
+const startServer = (req, res) => {
 	// check if server already started
 	if (!res.socket.server.io) {
 		console.log("Starting socket.io server");
@@ -21,4 +21,4 @@ const ioHandler = (req, res) => {
 	res.end();
 };
 
-export default ioHandler;
+export default startServer;
