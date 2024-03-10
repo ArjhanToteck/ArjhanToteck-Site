@@ -7,24 +7,11 @@ Here are the steps to import a new project:
 
 1. Import submodule:
 
-```
-git submodule add {submodule git path}
-```
-
-2. Link app folder:
-
-```
-ln -s ../projects/{project name}/app ./app/{project name}
+```bash
+git submodule add {git path} {project name}
 ```
 
-3. Link api folder:
-
-```
-ln -s ../../projects/{project name}/api ./pages/api/{project name}
-```
-
-4. Link public folder:
-
-```
-ln -s ../projects/{project name}/public ./public/{project name}
+2. Configure symlinks:
+```bash
+./shellScripts/configureProjectSymlinks.sh {projectName}
 ```
