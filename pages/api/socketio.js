@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 
 export let io;
 
-const startServer = (req, res) => {
+export default function startSocketio(req, res) {
 	// check if server already started
 	if (!res.socket.server.io) {
 		console.log("Starting socket.io server");
@@ -12,15 +12,12 @@ const startServer = (req, res) => {
 		res.socket.server.io = io;
 
 		// listen for connection
-		io.on("connection", socket => {
+		io.on("connection", (socket) => {
 			// echo
 			socket.on("echo", message => {
-				console.log("echo", message);
 				socket.emit("echo", message);
 			});
 		});
 	}
 	res.end();
 };
-
-export default startServer;
