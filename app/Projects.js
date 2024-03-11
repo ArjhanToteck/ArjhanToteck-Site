@@ -71,12 +71,27 @@ const Projects = [
     },
     {
         path: "enchantmentTableTranslator",
-        thumbnailAlt: "A Minecraft enchantment table translator.",
+        thumbnailAlt: "A Minecraft enchantment table with the text \"Enchantment Table Translator\".",
         description: "Translate text into the Minecraft enchantment table language and back."
     },
     {
+        path: "minigameBot",
+        thumbnailAlt: "A Discord screenshot showing the profile of a bot named \"Minigame Bot\".",
+        description: "Translate text into the Minecraft enchantment table language and back."
+    },
+    {
+        path: "https://arjhantoteck.itch.io/spheres-cubes-and-other-things",
+        thumbnailAlt: "A black and white vector art of a babylonian ziggurat with the text \"Tower of Babel\".",
+        description: "Tounges.js, a simple and free translation API for JavaScript that requires no payment, account, or API key."
+    },
+    {
+        path: "towerOfBabel",
+        thumbnailAlt: "A black and white vector art of a babylonian ziggurat with the text \"Tower of Babel\".",
+        description: "Tounges.js, a simple and free translation API for JavaScript that requires no payment, account, or API key."
+    },
+    {
         path: "toungesJs",
-        thumbnailAlt: "The Weather.js logo.",
+        thumbnailAlt: "The Tongues.js logo.",
         description: "Tounges.js, a simple and free translation API for JavaScript that requires no payment, account, or API key."
     },
     {
