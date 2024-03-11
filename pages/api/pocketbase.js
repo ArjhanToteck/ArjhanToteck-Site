@@ -7,7 +7,7 @@ export default function startPocketbase(req, res) {
     if (!pocketbase) {
         console.log("Starting pocketbase server");
 
-        pocketbase = new PocketBase("http://127.0.0.1:8090");
+        pocketbase = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_SERVER);
     }
     res.end();
 };
