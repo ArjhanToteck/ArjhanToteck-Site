@@ -8,7 +8,12 @@ export default function startSocketio(req, res) {
 		console.log("Starting socket.io server");
 
 		// starts server
-		io = new Server(res.socket.server);
+		io = new Server(res.socket.server, {
+			cors: {
+				origin: JSON.parse(process.env.CORS_ALLOWED_DOMAINS),
+				methods: ["GET", "POST"]
+			}
+		});
 		res.socket.server.io = io;
 
 		// listen for connection
