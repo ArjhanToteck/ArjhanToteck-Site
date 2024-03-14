@@ -11,6 +11,9 @@ export default function Index() {
 				<h2>
 					I'm Arjhan. I make stuff sometimes. Sometimes it's even good stuff, too.
 				</h2>
+				<p>
+					Quick note, projects that use websockets might take a while to load because I'm broke.
+				</p>
 				<br></br>
 			</section>
 			<div className="divider topDivider"></div>
