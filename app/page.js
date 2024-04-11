@@ -12,9 +12,6 @@ export default function Index() {
 					I'm Arjhan. I make stuff sometimes. Sometimes it's even good stuff, too.
 				</h2>
 				<p>
-					This site itself is written in JavaScript with the Next.js framework. You should go check out some stuff while you're on here.
-				</p>
-				<p>
 					Quick note, projects that use websockets might take a while to load because I'm broke.
 				</p>
 				<br></br>
