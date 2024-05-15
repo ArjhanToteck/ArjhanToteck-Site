@@ -9,10 +9,10 @@ export default function Index() {
 					Welcome.
 				</h1>
 				<h2>
-					I'm Arjhan. I make stuff sometimes. Sometimes it's even good stuff, too.
+					I'm Arjhan. I make stuff sometimes. Sometimes it's good, too.
 				</h2>
 				<p>
-					Quick note, projects that use websockets might take a while to load because I'm broke.
+					Quick note, projects that use websockets might take a while to load. They're not bugged, I'm just broke.
 				</p>
 				<br></br>
 			</section>
