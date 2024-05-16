@@ -12,7 +12,7 @@ export default function Index() {
 					I'm Arjhan. I make stuff sometimes. Sometimes it's good, too.
 				</h2>
 				<p>
-					Quick note, projects that use websockets might take a while to load. They're not bugged, I'm just broke.
+					Quick note: projects that use websockets might take a while to load. They're not bugged, I'm just broke. My bad.
 				</p>
 				<br></br>
 			</section>
