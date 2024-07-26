@@ -13,8 +13,11 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<link rel="icon" type="image/png" href="/favicon.png" />
 			<body className={inter.className}>
+				<div style={{ width: "100%" }}>
+					<header className="red">
+					</header>
+				</div>
 				{children}
-				<div className="divider bottomDivider"></div>
 				<footer className="red">
 					<p style={{ textAlign: "center", lineHeight: 1.5 }}>
 						Contact: <a href="mailto:rppfjwwt@duck.com">rppfjwwt@duck.com</a>

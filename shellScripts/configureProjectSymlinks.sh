@@ -13,7 +13,7 @@ fi
 PROJECT=$1
 
 # create app symlink
-ln -s ../projects/$PROJECT/app app/$PROJECT
+ln -s ../../projects/$PROJECT/app app/projects/$PROJECT
 
 # create api symlink
 ln -s ../../projects/$PROJECT/api pages/api/$PROJECT

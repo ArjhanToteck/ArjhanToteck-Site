@@ -66,6 +66,14 @@ content {
 	display: inline-block;
 }
 
+.textOutline {
+	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.red .textOutline {
+	text-shadow: -1px -1px 0 #262626, 1px -1px 0 #262626, -1px 1px 0 #262626, 1px 1px 0 #262626;
+}
+
 a {
 	color: red;
 	cursor: pointer;
@@ -115,7 +123,7 @@ table {
 
 td,
 th {
-	border: 1px solid #dddddd;
+	border: 1px solid white;
 	text-align: left;
 	padding: 8px;
 }
@@ -123,35 +131,4 @@ th {
 tr:nth-child(even) {
 	background-color: white;
 	color: #262626;
-}
-
-.navbar {
-	overflow: hidden;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-/*Message box*/
-
-.message {
-	padding: 20px;
-	background-color: black;
-	color: white;
-}
-
-.messageclosebtn {
-	margin-left: 15px;
-	color: white;
-	font-weight: bold;
-	float: right;
-	font-size: 22px;
-	line-height: 20px;
-	cursor: pointer;
-	transition: 0.3s;
-}
-
-.messageclosebtn:hover {
-	color: gray;
 }
