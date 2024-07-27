@@ -2,6 +2,8 @@ import { Server } from "socket.io";
 
 export let io;
 
+const CORS_ALLOWED_DOMAINS = JSON.parse(process.env.CORS_ALLOWED_DOMAINS);
+
 export default function startSocketio(req, res) {
 	// check if server already started
 	if (!res.socket.server.io) {
@@ -10,7 +12,7 @@ export default function startSocketio(req, res) {
 		// starts server
 		io = new Server(res.socket.server, {
 			cors: {
-				origin: JSON.parse(process.env.CORS_ALLOWED_DOMAINS),
+				origin: CORS_ALLOWED_DOMAINS,
 				methods: ["GET", "POST"]
 			}
 		});
