@@ -13,12 +13,12 @@ fi
 PROJECT=$1
 
 # create app symlink
-ln -s ../projects/$PROJECT/app app/$PROJECT
+ln -s ../../projects/$PROJECT/app app/projects/$PROJECT
 
 # create api symlink
-ln -s ../../projects/$PROJECT/api pages/api/$PROJECT
+ln -s ../../../projects/$PROJECT/api pages/api/projects/$PROJECT
 
 # create public symlink
-ln -s ../projects/$PROJECT/public public/$PROJECT
+ln -s ../../projects/$PROJECT/public public/projects/$PROJECT
 
 echo "Symlinks added"

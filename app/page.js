@@ -59,8 +59,8 @@ function Project({ project }) {
 				{name}
 			</h2>
 
-			<a href={path}>
-				<img width="300" src={`${path}/thumbnail.png`} alt={thumbnailAlt} />
+			<a href={"projects/" + path}>
+				<img width="300" src={`projects/${path}/thumbnail.png`} alt={thumbnailAlt} />
 			</a>
 			<h5>{description}</h5>
 		</div>

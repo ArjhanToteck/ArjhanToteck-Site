@@ -12,13 +12,13 @@ fi
 
 PROJECT=$1
 
-# create app symlink
-rm app/$PROJECT
+# remove app symlink
+rm app/projects/$PROJECT
 
-# create api symlink
-rm pages/api/$PROJECT
+# remove api symlink
+rm pages/api/projects/$PROJECT
 
-# create public symlink
-rm public/$PROJECT
+# remove public symlink
+rm public/projects/$PROJECT
 
 echo "Symlinks deleted, note the project folder still remains in projects/"
