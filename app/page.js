@@ -9,7 +9,6 @@ export default function Index() {
 	return (
 		<main>
 			<section className="red">
-				<br></br>
 				<h1 style={{ fontSize: "75px" }}>
 					Welcome.
 				</h1>

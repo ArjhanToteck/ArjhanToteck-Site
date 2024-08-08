@@ -56,11 +56,11 @@ content {
 }
 
 .topDivider {
-	background-image: url("/topDivider.svg");
+	background-image: url("/images/topDivider.svg");
 }
 
 .bottomDivider {
-	background-image: url("/bottomDivider.svg");
+	background-image: url("/images/bottomDivider.svg");
 }
 
 .round {
@@ -85,6 +85,11 @@ a {
 
 .red a {
 	color: rgb(199, 199, 199);
+}
+
+.hiddenLink {
+	color: n;
+	text-decoration: none;
 }
 
 button {

@@ -10,13 +10,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
+		// todo: fix logo and links
 		<html lang="en">
-			<link rel="icon" type="image/png" href="/favicon.png" />
+			<link rel="icon" type="image/png" href="/images/favicon.png" />
 			<body className={inter.className}>
-				<div style={{ width: "100%" }}>
-					<header className="red">
-					</header>
-				</div>
+				<header className="red">
+					<a className="hiddenLink" href="/" style={{
+						width: "85%",
+						display: "flex",
+						alignItems: "center",
+						color: "white",
+						textDecoration: "none",
+						fontSize: "20px"
+					}}>
+						<img src="/images/logo.png" style={{ height: "50px" }}></img>
+						<span style={{ width: "10px" }}>&nbsp;</span>
+						<h2 style={{ display: "inline-block", }}>ArjhanToteck</h2>
+					</a>
+				</header>
 				{children}
 				<footer className="red">
 					<p style={{ textAlign: "center", lineHeight: 1.5 }}>
@@ -28,7 +39,7 @@ export default function RootLayout({ children }) {
 
 						<br></br>
 
-						&copy; 2024 ArjhanToteck
+						&copy; 2020-2024 ArjhanToteck
 					</p>
 				</footer>
 				<Analytics />
