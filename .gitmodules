@@ -2,3 +2,6 @@
 	path = projects/basicChatroom
 	url = https://github.com/ArjhanToteck/Basic-Chatroom.git
 	branch = update-for-next
+[submodule "projects/cumulus"]
+	path = projects/cumulus
+	url = https://github.com/ArjhanToteck/Cumulus.git
