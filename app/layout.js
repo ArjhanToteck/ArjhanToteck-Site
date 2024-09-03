@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -10,9 +10,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		// todo: fix logo and links
 		<html lang="en">
-			<link rel="icon" type="image/png" href="/images/favicon.png" />
+			<head>
+				<meta charset="utf-8"></meta>
+				<link rel="icon" type="image/png" href="/images/favicon.png" />
+				<Analytics />
+			</head>
 			<body className={inter.className}>
 				<header className="red">
 					<a className="hiddenLink" href="/" style={{
@@ -39,10 +42,9 @@ export default function RootLayout({ children }) {
 
 						<br></br>
 
-						&copy; 2020-2024 ArjhanToteck
+						&copy; 2020-{new Date().getFullYear()} ArjhanToteck
 					</p>
 				</footer>
-				<Analytics />
 			</body>
 		</html>
 	);

@@ -1,8 +1,9 @@
 "use client";
 
-const Projects = require("./Projects");
+// TODO: replace all requires with imports for best practice
+import Projects from "./Projects";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function Index() {
 
@@ -12,7 +13,7 @@ export default function Index() {
 				<h1 style={{ fontSize: "75px" }}>
 					Welcome.
 				</h1>
-				<h2 style={{ textAlign: 'center' }}>
+				<h2 style={{ textAlign: "center" }}>
 					I'm Arjhan. I make stuff sometimes. Sometimes it's good, too.
 					<br></br>
 					You should look at some of it.
@@ -39,7 +40,7 @@ export default function Index() {
 			<section>
 				<h1>Projects</h1>
 				<br></br>
-				<div id="projects" style={{ display: "inline-flex", flexWrap: "wrap", margin: "auto", width: "85%" }}>
+				<div id="projects" style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center", margin: "auto", width: "85%" }}>
 					{Projects.map((project, index) => (
 						<Project key={index} project={project} />
 					))}
