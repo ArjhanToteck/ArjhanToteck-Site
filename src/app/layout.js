@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<head>
-				<meta charset="utf-8"></meta>
+				<meta charSet="utf-8"></meta>
 				<link rel="icon" type="image/png" href="/images/favicon.png" />
 				<Analytics />
 			</head>
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
 						textDecoration: "none",
 						fontSize: "20px"
 					}}>
-						<img src="/images/logo.png" style={{ height: "50px" }}></img>
+						<Image alt="" src="/images/logo.png" width="50" height="50" />
 						<span style={{ width: "10px" }}>&nbsp;</span>
 						<h2 style={{ display: "inline-block", }}>ArjhanToteck</h2>
 					</a>

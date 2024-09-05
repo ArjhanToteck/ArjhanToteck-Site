@@ -1,10 +1,12 @@
 {
-	"name": "next-test",
+	"name": "arjhan-toteck-site",
 	"version": "0.1.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
+		"configureProjects": "node prestart/configureProjects.js",
+		"dev": "npm run configureProjects && next dev",
+		"build": "npm run configureProjects && next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -18,6 +20,11 @@
 		"react": "^18",
 		"react-dom": "^18",
 		"socket.io": "^4.7.4",
-		"socket.io-client": "^4.7.4"
+		"socket.io-client": "^4.7.4",
+		"cpx2": "^7.0.1"
+	},
+	"devDependencies": {
+		"eslint": "8.57.0",
+		"eslint-config-next": "14.2.8"
 	}
 }

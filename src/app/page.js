@@ -3,9 +3,10 @@
 // TODO: replace all requires with imports for best practice
 import Projects from "./Projects";
 
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-export default function Index() {
+export default function Page() {
 
 	return (
 		<main>
@@ -60,7 +61,7 @@ function Project({ project }) {
 			</h2>
 
 			<a href={"projects/" + path}>
-				<img width="300" src={`projects/${path}/thumbnail.png`} alt={thumbnailAlt} />
+				<Image width="300" height="170" src={`/projects/${path}/thumbnail.png`} alt={thumbnailAlt} />
 			</a>
 			<h5>{description}</h5>
 		</div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useRef } from "react";
 import hljs from "highlight.js/lib/common";
 
@@ -32,7 +33,7 @@ export default function CodeBlock({ code }) {
 	return (
 		<div className="round red" style={{ backgroundColor: "#131313", color: "white", padding: "30px", position: "relative" }}>
 			<button style={{ position: "absolute", top: "10px", right: "10px" }} onClick={handleCopy}>
-				<img ref={copyIconRef} src="/images/copy.svg" title="Copy"></img>
+				<Image ref={copyIconRef} src="/images/copy.svg" title="Copy" alt="Copy" />
 			</button>
 			<pre>
 				<code ref={codeRef} style={{ whiteSpace: "pre-wrap" }} dangerouslySetInnerHTML={{
