@@ -38,3 +38,8 @@ next-env.d.ts
 # pocketbase data
 pb_data/
 pb_migrations/
+
+# project copied folders
+src/app/projects
+src/pages/api/projects
+public/projects/
