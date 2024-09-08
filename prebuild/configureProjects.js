@@ -45,6 +45,7 @@ export default function configureProjects() {
 
 function copyPath(source, destination) {
 	if (process.env.NODE_ENV == "development") {
+		console.log("Watching for folder changes in development");
 		cpx.watch(source, destination);
 	} else {
 		cpx.copySync(source, destination);
