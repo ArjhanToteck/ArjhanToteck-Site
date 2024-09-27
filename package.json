@@ -13,6 +13,7 @@
 	"dependencies": {
 		"@next/env": "^14.2.8",
 		"@vercel/analytics": "^1.2.2",
+		"binpackingjs": "^3.0.2",
 		"cors": "^2.8.5",
 		"cpx2": "^7.0.1",
 		"geo-tz": "^8.1.1",
