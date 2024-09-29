@@ -29,6 +29,7 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
+	text-align: center;
 }
 
 .red {
@@ -56,15 +57,17 @@ h2 {
 section,
 header,
 footer {
+	width: 80%;
+	margin: auto;
+	padding: 0 10% 0 10%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 
-content {
-	width: 90%;
-	margin: auto;
+section,
+footer {
+	align-items: center;
 }
 
 .divider {
@@ -86,7 +89,6 @@ content {
 .round {
 	padding: 10px;
 	border-radius: 20px;
-	display: inline-block;
 }
 
 .textOutline {

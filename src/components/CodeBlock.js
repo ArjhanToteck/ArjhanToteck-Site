@@ -31,7 +31,7 @@ export default function CodeBlock({ code }) {
 	}
 
 	return (
-		<div className="round red" style={{ backgroundColor: "#131313", color: "white", padding: "30px", position: "relative" }}>
+		<div className="round red" style={{ textAlign: "left", backgroundColor: "#131313", color: "white", padding: "30px", position: "relative" }}>
 			<button style={{ position: "absolute", top: "10px", right: "10px" }} onClick={handleCopy}>
 				<Image ref={copyIconRef} src="/images/copy.svg" title="Copy" alt="Copy" width="25" height="25" />
 			</button>
