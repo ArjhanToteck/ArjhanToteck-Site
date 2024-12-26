@@ -6,6 +6,4 @@ const { loadEnvConfig } = nextEnv;
 const projectDir = process.cwd()
 loadEnvConfig(projectDir)
 
-
-
 configureProjects();

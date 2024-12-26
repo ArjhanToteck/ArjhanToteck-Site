@@ -1,7 +1,7 @@
 "use client";
 
 // TODO: replace all requires with imports for best practice
-import Projects from "./Projects";
+import projects from "./projects";
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ export default function Page() {
 				<h1>Projects</h1>
 				<br></br>
 				<div id="projects" style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center", margin: "auto", width: "85%" }}>
-					{Projects.map((project, index) => (
+					{projects.map((project, index) => (
 						<Project key={index} project={project} />
 					))}
 				</div>

@@ -1,4 +1,4 @@
-const Projects = [
+const projects = [
 	{
 		name: "da Vinci Machine",
 		path: "daVinciMachine",
@@ -127,4 +127,4 @@ const Projects = [
 	}
 ];
 
-export default Projects;
+export default projects;

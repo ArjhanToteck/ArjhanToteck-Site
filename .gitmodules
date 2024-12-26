@@ -5,6 +5,6 @@
 [submodule "projects/cumulus"]
 	path = projects/cumulus
 	url = https://github.com/ArjhanToteck/Cumulus.git
-[submodule "projects/brickedUp"]
-	path = projects/brickedUp
-	url = https://github.com/ArjhanToteck/Bricked-Up.git
+[submodule "projects/set2Stl"]
+	path = projects/set2Stl
+	url = https://github.com/ArjhanToteck/Set2STL.git
