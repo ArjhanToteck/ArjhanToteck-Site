@@ -1,6 +1,6 @@
 @font-face {
 	font-family: Quicksand;
-	src: url(/public/fonts/Quicksand.ttf);
+	src: url(/fonts/Quicksand.ttf);
 }
 
 * {
@@ -68,6 +68,11 @@ footer {
 section,
 footer {
 	align-items: center;
+}
+
+.wide {
+	padding: 0;
+	width: 100%;
 }
 
 .divider {
