@@ -108,8 +108,8 @@ const projects = [
 		description: "Tongues.js, a simple and free translation API for JavaScript that requires no payment, account, or API key."
 	},
 	{
-		name: "Weather.js",
-		path: "weatherJs",
+		name: "Cumulus",
+		path: "cumulus",
 		thumbnailAlt: "A cloud with the text \"Weather.js.\"",
 		description: "A free and easy to use JavaScript API that gets weather data."
 	},
