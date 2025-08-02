@@ -145,17 +145,15 @@ input {
 	outline: 0
 }
 
+input[type="checkbox"] {
+	vertical-align: middle;
+}
+
 textarea {
 	border-radius: 4px;
 	border: none !important;
 	border-color: transparent !important;
 	text-align: center;
-	outline: 0
-}
-
-input[type="file"] {
-	color: var(--textColor);
-	border-radius: 10px;
 	outline: 0
 }
 
@@ -260,3 +258,5 @@ code.hljs {
 .hljs-link {
 	text-decoration: underline
 }
+
+/* end highlight.js */

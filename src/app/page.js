@@ -16,31 +16,31 @@ export default function Page() {
 				</h1>
 				<h2 style={{ textAlign: "center" }}>
 					I'm Arjhan. I make stuff sometimes. Sometimes it's good, too.
-					<br></br>
+					<br />
 					You should look at some of it.
 				</h2>
 
 				<h2 style={{ marginBottom: "0px" }}>
-					<hr></hr>
+					<hr />
 					Server Statuses
 				</h2>
 
-				<p>This site uses various servers to run. They're all free services because I'm broke, so sometimes they may be asleep and take a bit to wake back up.</p>
+				<p>This site uses various servers to run. Since I'm a broke teenager, they're all free services, so sometimes they may be asleep and take a bit to wake back up, even though they're healthy. Projects that use websockets, like the chat-based ones, may take an especially long time to load when asleep because of this.</p>
 
 				<ul style={{ alignContent: "center", textAlign: "center", listStyleType: "none" }}>
 					<li> Next.js Server: <ServerStatus currentServer={true} /> </li>
-					<li> Processing Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_PROCESSING_SERVER} /></li>
-					<li> Socket.IO Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_SOCKETIO_SERVER} /></li>
+					<li> Processing Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_PROCESSING_SERVER} /> </li>
+					<li> Socket.IO Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_SOCKETIO_SERVER} /> </li>
 					<li> PocketBase Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_POCKETBASE_SERVER} /> </li>
 				</ul>
-				<br></br>
+				<br />
 			</section>
 
-			<div className="divider topDivider"></div>
+			<div className="divider topDivider" />
 
 			<section>
 				<h1>Projects</h1>
-				<br></br>
+				<br />
 				<div id="projects" style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center", margin: "auto", width: "85%" }}>
 					{projects.map((project, index) => (
 						<Project key={index} project={project} />
