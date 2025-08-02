@@ -10,4 +10,4 @@
 	url = https://github.com/ArjhanToteck/Set2STL.git
 [submodule "projects/daVinciMachine"]
 	path = projects/daVinciMachine
-	url = https://github.com/ArjhanToteck/Da-Vinci-Machine
+	url = https://github.com/ArjhanToteck/Da-Vinci-Machine.git
