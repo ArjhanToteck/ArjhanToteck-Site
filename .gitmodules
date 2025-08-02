@@ -8,3 +8,6 @@
 [submodule "projects/set2Stl"]
 	path = projects/set2Stl
 	url = https://github.com/ArjhanToteck/Set2STL.git
+[submodule "projects/daVinciMachine"]
+	path = projects/daVinciMachine
+	url = https://github.com/ArjhanToteck/Da-Vinci-Machine
