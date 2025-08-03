@@ -1,14 +1,20 @@
 const projects = [
 	{
+		name: "Sign Data Generator",
+		path: "signDataGenerator",
+		thumbnailAlt: "",
+		description: "During a programming competition, my team worked on a game controlled by ASL signs. I made this program to detect hand positions and create training data for our AI model. It's cool to play around with."
+	},
+	{
 		name: "Set2STL",
 		path: "set2Stl",
-		thumbnailAlt: "A side-by-side comparison of an original digital image and a version drawn with paper and pencil by a 3D printer using grid density.",
+		thumbnailAlt: ".",
 		description: "This project converts Lego sets into STL files."
 	},
 	{
 		name: "FantasyNav",
 		absolutePath: "https://github.com/ArjhanToteck/Fantasy-Nav",
-		thumbnailAlt: "A side-by-side comparison of an original digital image and a version drawn with paper and pencil by a 3D printer using grid density.",
+		thumbnailAlt: "",
 		description: "An android app that turns the world into a fantasy map."
 	},
 	{
@@ -56,7 +62,7 @@ const projects = [
 	{
 		name: "Blackjack",
 		path: "blackjack",
-		thumbnailAlt: "Blackjack.",
+		thumbnailAlt: "",
 		description: "A really simple online text-based version of blackjack that I made while bored in school."
 	},
 	{
@@ -67,9 +73,9 @@ const projects = [
 	},
 	{
 		name: "Online Game Template",
-		path: "onlineGameTemplate",
+		absolutePath: "https://github.com/ArjhanToteck/Simple-Online-Game-Template",
 		thumbnailAlt: "An image of the code from an online game template.",
-		description: "A simple open-source template for a basic online game based off of the code from Werewolf."
+		description: "A simple open-source template for a basic online game based off of the code from an older version of Werewolf."
 	},
 	{
 		name: "2048 (But Better)",
@@ -90,16 +96,16 @@ const projects = [
 		description: "A pretty simple game about disease. It's not my best work and I might add more to it, or I might move on."
 	},
 	{
-		name: "Enchantment Table Translator",
-		path: "enchantmentTableTranslator",
-		thumbnailAlt: "A Minecraft enchantment table with the text \"Enchantment Table Translator\".",
-		description: "Translate text into the Minecraft enchantment table language and back."
+		name: "Enchanting Table Translator",
+		path: "enchantingTableTranslator",
+		thumbnailAlt: "A Minecraft enchanting table with the text \"Enchanting Table Translator\".",
+		description: "Translate text into the Minecraft enchanting table language and back."
 	},
 	{
 		name: "Minigame Bot",
 		path: "minigameBot",
 		thumbnailAlt: "A Discord screenshot showing the profile of a bot named \"Minigame Bot\".",
-		description: "Translate text into the Minecraft enchantment table language and back."
+		description: "A simple Discord bot for playing several minigames written in JavaScript."
 	},
 	{
 		name: "Spheres, Cubes, and Other Things",
@@ -111,7 +117,7 @@ const projects = [
 		name: "Tower of Babel",
 		path: "towerOfBabel",
 		thumbnailAlt: "A black and white vector art of a babylonian ziggurat with the text \"Tower of Babel\".",
-		description: "Modern translation software is very far from perfect. Translating something over and over with them can completely change its meaning. That's the idea of this project."
+		description: "Modern translation software is very far from perfect. This project shows how translating something over and over with them can completely change its meaning."
 	},
 	{
 		name: "Cumulus",

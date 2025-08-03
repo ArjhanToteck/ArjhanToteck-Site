@@ -17,3 +17,6 @@
 [submodule "projects/towerOfBabel"]
 	path = projects/towerOfBabel
 	url = https://github.com/ArjhanToteck/Tower-of-Babel.git
+[submodule "projects/enchantingTableTranslator"]
+	path = projects/enchantingTableTranslator
+	url = https://github.com/ArjhanToteck/Enchanting-Table-Translator
