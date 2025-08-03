@@ -77,39 +77,49 @@ function Project({ project }) {
 }
 
 function ServerStatus({ endpoint = null, currentServer = false }) {
-	const [healthy, setHealthy] = useState(true);
+	// if we know it's the current server we can just default 
+	const [healthMessage, setHealthMessage] = useState("Loading...");
+	const [healthColor, setHealthColor] = useState("yellow");
 
 	useEffect(() => {
-		const checkServerStatus = async () => {
-			if (!currentServer && endpoint) {
-				const isHealthy = await checkEndpoint(endpoint);
-				setHealthy(isHealthy);
-			}
-		};
-
-		checkServerStatus();
+		// if it's the current server we know it's working
+		if (currentServer) {
+			setHealthMessage("Healthy");
+			setHealthColor("green");
+		} else if (endpoint) {
+			checkServerStatus(endpoint);
+		}
 	}, [endpoint, currentServer]);
 
 	return (
-		<strong className="textOutline" style={{ color: healthy ? "green" : "red" }}>{healthy ? "Healthy" : "Not Working"}</strong>
+		<strong className="textOutline" style={{ color: healthColor }}>{healthMessage}</strong>
 	);
-}
 
-async function checkEndpoint(endpoint) {
-	try {
-		const response = await fetch(endpoint + "/api/health");
+	async function checkServerStatus(endpoint) {
+		try {
+			const response = await fetch(endpoint + "/api/health");
 
-		if (!response.ok) {
+			if (!response.ok) {
+				throw new Error(response.status);
+			}
+
+			const data = await response.json();
+
+			// TODO: probably don't wanna use a magic string, but that's what works with pocketbase
+			if (data.message == "API is healthy." || data.healthy) {
+				setHealthMessage("Healthy");
+				setHealthColor("green");
+			} else {
+				setHealthMessage("Waking up...");
+				setHealthColor("yellow");
+			}
+		} catch (error) {
+			console.error("Error checking endpoint:", error);
+
+			setHealthMessage("Not working");
+			setHealthColor("red");
+
 			return false;
 		}
-
-		const data = await response.json();
-
-		if (data.message == "API is healthy." || data.healthy) {
-			return true;
-		}
-	} catch (error) {
-		console.error("Error checking endpoint:", error);
-		return false;
 	}
 }
