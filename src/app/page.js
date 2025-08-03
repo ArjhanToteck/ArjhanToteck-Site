@@ -25,7 +25,7 @@ export default function Page() {
 					Server Statuses
 				</h2>
 
-				<p>This site uses various servers to run. Since I'm a broke teenager, they're all free services, so sometimes they may be asleep and take a bit to wake back up, even though they're healthy. Projects that use websockets, like the chat-based ones, may take an especially long time to load when asleep because of this.</p>
+				<p>This site uses various servers to run. Since I'm a broke teenager, they're all free services, so sometimes they may be asleep and take a bit to wake back up. Projects that use websockets, like the chat-based ones, may take an especially long time to load when asleep because of this.</p>
 
 				<ul style={{ alignContent: "center", textAlign: "center", listStyleType: "none" }}>
 					<li> Next.js Server: <ServerStatus currentServer={true} /> </li>
@@ -99,7 +99,12 @@ function ServerStatus({ endpoint = null, currentServer = false }) {
 async function checkEndpoint(endpoint) {
 	try {
 		const response = await fetch(endpoint + "/api/health");
-		return response.ok;
+
+		if (!response.ok) {
+			return false;
+		}
+
+		const data = await response.json();
 	} catch (error) {
 		console.error("Error checking endpoint:", error);
 		return false;
