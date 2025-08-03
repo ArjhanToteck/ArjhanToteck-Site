@@ -102,12 +102,6 @@ const projects = [
 		description: "Modern translation software is very far from perfect. Translating something over and over with them can completely change its meaning. That's the idea of this simple project."
 	},
 	{
-		name: "Tongues.js",
-		path: "tonguesJs",
-		thumbnailAlt: "The Tongues.js logo.",
-		description: "Tongues.js, a simple and free translation API for JavaScript that requires no payment, account, or API key."
-	},
-	{
 		name: "Cumulus",
 		path: "cumulus",
 		thumbnailAlt: "A cloud with the text \"Weather.js.\"",
