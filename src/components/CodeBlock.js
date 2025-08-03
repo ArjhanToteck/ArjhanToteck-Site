@@ -21,7 +21,7 @@ export default function CodeBlock({ code, showCopyButton = true, showDownloadBut
 			// auto detect language
 			setHighlightedCode(hljs.highlightAuto(code).value);
 		}
-	}, [code]);
+	}, [code, language]);
 
 	return (
 		<div className="round red" style={{ textAlign: "left", backgroundColor: "#131313", color: "white", padding: "30px", position: "relative" }}>
