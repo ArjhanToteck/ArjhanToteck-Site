@@ -4,7 +4,8 @@ export let io;
 
 const CORS_ALLOWED_DOMAINS = JSON.parse(process.env.CORS_ALLOWED_DOMAINS);
 
-export default function startSocketio(req, res) {
+// req and res are only used when this api is called as a path
+export default function startSocketio(req, res, calledAsPath = true) {
 	// check if server already started
 	if (!res.socket.server.io) {
 		console.log("Starting socket.io server");
@@ -26,5 +27,9 @@ export default function startSocketio(req, res) {
 			});
 		});
 	}
-	res.end();
+
+	// only end http if called as path (not called by another script)
+	if (calledAsPath) {
+		return res.status(200).send("Ok.");
+	}
 };
