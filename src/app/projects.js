@@ -1,5 +1,17 @@
 const projects = [
 	{
+		name: "Set2STL",
+		path: "set2Stl",
+		thumbnailAlt: "A side-by-side comparison of an original digital image and a version drawn with paper and pencil by a 3D printer using grid density.",
+		description: "This project converts Lego sets into STL files."
+	},
+	{
+		name: "FantasyNav",
+		absolutePath: "https://github.com/ArjhanToteck/Fantasy-Nav",
+		thumbnailAlt: "A side-by-side comparison of an original digital image and a version drawn with paper and pencil by a 3D printer using grid density.",
+		description: "An android app that turns the world into a fantasy map."
+	},
+	{
 		name: "da Vinci Machine",
 		path: "daVinciMachine",
 		thumbnailAlt: "A side-by-side comparison of an original digital image and a version drawn with paper and pencil by a 3D printer using grid density.",
@@ -13,7 +25,7 @@ const projects = [
 	},
 	{
 		name: "History of the Atom",
-		path: "https://arjhantoteck.itch.io/history-of-the-atom-project",
+		absolutePath: "https://arjhantoteck.itch.io/history-of-the-atom-project",
 		thumbnailAlt: "A Rutherford atom model.",
 		description: "This is just my History of the Atom project for my chemistry class, made in Unity."
 	},
@@ -25,19 +37,19 @@ const projects = [
 	},
 	{
 		name: "Whisper Bot",
-		path: "https://arjhantoteck.itch.io/whisper-bot",
+		absolutePath: "https://arjhantoteck.itch.io/whisper-bot",
 		thumbnailAlt: "A game menu screen, the cover of Whisper Bot.",
 		description: "A game I made to include a voice recognition gimmick, but I couldn't find any good library, so I gave up and published it as-is. Story of my life."
 	},
 	{
 		name: "settings_prototype",
-		path: "https://arjhantoteck.itch.io/settings-prototype",
+		absolutePath: "https://arjhantoteck.itch.io/settings-prototype",
 		thumbnailAlt: "A game menu screen, the cover of Settings_Prototype.",
 		description: "A stupid game I made in about 2 days for a competition. I hate it. We don't talk about it."
 	},
 	{
 		name: "Tiny Pianist",
-		path: "https://arjhantoteck.itch.io/tiny-pianist",
+		absolutePath: "https://arjhantoteck.itch.io/tiny-pianist",
 		thumbnailAlt: "A piano being played by neon blue keys, the cover of Tiny Pianist.",
 		description: "Play various songs on the piano by jumping from key to key in this rhythm-based platformer."
 	},
@@ -61,19 +73,19 @@ const projects = [
 	},
 	{
 		name: "2048 (But Better)",
-		path: "https://arjhantoteck.itch.io/2048-but-better",
+		absolutePath: "https://arjhantoteck.itch.io/2048-but-better",
 		thumbnailAlt: "The 2048 (But Better) logo",
 		description: "Just a simple 3D-graphics version of the classic game \"2048.\""
 	},
 	{
 		name: "Butter Fingers",
-		path: "https://arjhantoteck.itch.io/butter-fingers",
+		absolutePath: "https://arjhantoteck.itch.io/butter-fingers",
 		thumbnailAlt: "A stick of butter falling, the Butter Fingers logo.",
 		description: "A short Foddian platformer where you play as a slippery stick of butter written in Unity created for the 2021 Ludwig Jam."
 	},
 	{
 		name: "Project Malady",
-		path: "https://arjhantoteck.itch.io/project-malady",
+		absolutePath: "https://arjhantoteck.itch.io/project-malady",
 		thumbnailAlt: "A bloodstained file folder with a red stamp reading \"Project Malady,\" the cover of the game.",
 		description: "A pretty simple game about disease. It's not my best work and I might add more to it, or I might move on."
 	},
@@ -91,7 +103,7 @@ const projects = [
 	},
 	{
 		name: "Spheres, Cubes, and Other Things",
-		path: "https://arjhantoteck.itch.io/spheres-cubes-and-other-things",
+		absolutePath: "https://arjhantoteck.itch.io/spheres-cubes-and-other-things",
 		thumbnailAlt: "A black and white vector art of a babylonian ziggurat with the text \"Tower of Babel\".",
 		description: "A 3D runner game inspired partially by Super Monkey Ball and Geometry Dash."
 	},
@@ -99,13 +111,13 @@ const projects = [
 		name: "Tower of Babel",
 		path: "towerOfBabel",
 		thumbnailAlt: "A black and white vector art of a babylonian ziggurat with the text \"Tower of Babel\".",
-		description: "Modern translation software is very far from perfect. Translating something over and over with them can completely change its meaning. That's the idea of this simple project."
+		description: "Modern translation software is very far from perfect. Translating something over and over with them can completely change its meaning. That's the idea of this project."
 	},
 	{
 		name: "Cumulus",
 		path: "cumulus",
 		thumbnailAlt: "A cloud with the text \"Weather.js.\"",
-		description: "A free and easy to use JavaScript API that gets weather data."
+		description: "A free and easy-to-use API that gets weather data."
 	},
 	{
 		name: "Werewolf",

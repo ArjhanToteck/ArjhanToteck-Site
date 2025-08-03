@@ -52,7 +52,16 @@ export default function Page() {
 }
 
 function Project({ project }) {
-	const { name, path, thumbnailAlt, description } = project || {};
+	const { name, path, thumbnailAlt, description, absolutePath } = project || {};
+
+	let adjustedPath;
+
+	// use absolute path if present
+	if (absolutePath) {
+		adjustedPath = absolutePath;
+	} else {
+		adjustedPath = "projects/" + path;
+	}
 
 	return (
 		<div style={{ width: "300px" }}>
@@ -60,7 +69,7 @@ function Project({ project }) {
 				{name}
 			</h2>
 
-			<a href={"projects/" + path}>
+			<a href={adjustedPath}>
 				<Image width="300" height="170" src={`/projects/${path}/thumbnail.png`} alt={thumbnailAlt} />
 			</a>
 			<h5>{description}</h5>
