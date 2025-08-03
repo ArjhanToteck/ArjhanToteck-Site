@@ -11,3 +11,9 @@
 [submodule "projects/daVinciMachine"]
 	path = projects/daVinciMachine
 	url = https://github.com/ArjhanToteck/Da-Vinci-Machine.git
+[submodule "projects/2048ButBetterServer"]
+	path = projects/2048ButBetterServer
+	url = https://github.com/ArjhanToteck/2048-But-Better-Server
+[submodule "projects/towerOfBabel"]
+	path = projects/towerOfBabel
+	url = https://github.com/ArjhanToteck/Tower-of-Babel.git
