@@ -1,6 +1,5 @@
 "use client";
 
-// TODO: replace all requires with imports for best practice
 import projects from "./projects";
 
 import Image from "next/image";
@@ -105,6 +104,10 @@ async function checkEndpoint(endpoint) {
 		}
 
 		const data = await response.json();
+
+		if (data.message == "API is healthy." || data.healthy) {
+			return true;
+		}
 	} catch (error) {
 		console.error("Error checking endpoint:", error);
 		return false;
