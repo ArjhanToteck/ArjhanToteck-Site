@@ -149,6 +149,11 @@ input[type="checkbox"] {
 	vertical-align: middle;
 }
 
+input[disabled],
+textarea[disabled] {
+	color: white;
+}
+
 textarea {
 	border-radius: 4px;
 	border: none !important;
