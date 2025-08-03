@@ -51,7 +51,7 @@ const projects = [
 		name: "settings_prototype",
 		absolutePath: "https://arjhantoteck.itch.io/settings-prototype",
 		thumbnailAlt: "A game menu screen, the cover of Settings_Prototype.",
-		description: "A stupid game I made in about 2 days for a competition. I hate it. We don't talk about it."
+		description: "A dumb game I made in about 2 days for a competition. It's not great. We don't talk about it."
 	},
 	{
 		name: "Tiny Pianist",
