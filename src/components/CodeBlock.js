@@ -104,7 +104,6 @@ export default function CodeBlock({ code, showCopyButton = true, showDownloadBut
 
 			// wait for cooldown
 			iconRef.current.cooldown = setTimeout(() => {
-				console.log("asd");
 				// revert src
 				if (iconRef.current) {
 					iconRef.current.src = originalSrc;

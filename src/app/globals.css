@@ -166,6 +166,10 @@ textarea {
 	outline: 0
 }
 
+hr {
+	width: 100%;
+}
+
 table {
 	border-collapse: collapse;
 }

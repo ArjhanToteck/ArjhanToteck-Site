@@ -23,3 +23,6 @@
 [submodule "projects/signDataGenerator"]
 	path = projects/signDataGenerator
 	url = https://github.com/ArjhanToteck/Sign-Data-Generator.git
+[submodule "projects/egyptianHieroglyphTransliteration"]
+	path = projects/egyptianHieroglyphTransliteration
+	url = https://github.com/ArjhanToteck/Egyptian-Transliteration
