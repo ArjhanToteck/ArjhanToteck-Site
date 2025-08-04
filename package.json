@@ -11,6 +11,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
 		"@next/env": "^14.2.8",
 		"@vercel/analytics": "^1.2.2",
 		"binpackingjs": "^3.0.2",

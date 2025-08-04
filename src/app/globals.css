@@ -124,16 +124,20 @@ button {
 	color: var(--textColor);
 }
 
-button:hover {
+button:hover:not(:disabled) {
 	filter: brightness(95%);
 }
 
-button:active {
+button:active:not(:disabled) {
 	filter: brightness(90%);
 }
 
 button img {
 	pointer-events: none;
+}
+
+button:disabled {
+	background-color: var(--backgroundColor);
 }
 
 input {
@@ -149,8 +153,8 @@ input[type="checkbox"] {
 	vertical-align: middle;
 }
 
-input[disabled],
-textarea[disabled] {
+input:disabled,
+textarea:disabled {
 	color: white;
 }
 

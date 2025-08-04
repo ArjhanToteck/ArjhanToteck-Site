@@ -20,3 +20,6 @@
 [submodule "projects/enchantingTableTranslator"]
 	path = projects/enchantingTableTranslator
 	url = https://github.com/ArjhanToteck/Enchanting-Table-Translator
+[submodule "projects/signDataGenerator"]
+	path = projects/signDataGenerator
+	url = https://github.com/ArjhanToteck/Sign-Data-Generator.git
