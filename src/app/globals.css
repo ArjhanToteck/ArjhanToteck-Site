@@ -32,7 +32,8 @@ body {
 	text-align: center;
 }
 
-.red {
+.red,
+.redHover:hover {
 	--backgroundColor: var(--darkRed);
 	--textColor: white;
 	--shadowColor: var(--lightGray);
@@ -41,6 +42,10 @@ body {
 
 	color: var(--textColor);
 	background-color: var(--backgroundColor);
+}
+
+.redHover {
+	cursor: pointer;
 }
 
 h1 {

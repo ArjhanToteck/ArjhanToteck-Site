@@ -26,3 +26,6 @@
 [submodule "projects/egyptianHieroglyphTransliteration"]
 	path = projects/egyptianHieroglyphTransliteration
 	url = https://github.com/ArjhanToteck/Egyptian-Transliteration
+[submodule "projects/playlistHeardle"]
+	path = projects/playlistHeardle
+	url = https://github.com/ArjhanToteck/Playlist-Heardle
