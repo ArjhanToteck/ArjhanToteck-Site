@@ -76,8 +76,8 @@ export default function FilterSelect({ options, onSelect, onChange, placeholder 
 					zIndex: 1,
 					padding: "10px"
 				}}>
-					{filteredOptions.map((option) => (
-						<Option option={option} />
+					{filteredOptions.map((option, i) => (
+						<Option key={i} option={option} />
 					))}
 				</div>
 			)}
