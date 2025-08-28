@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
 
 						<br></br>
 
-						<a href="https://github.com/ArjhanToteck/ArjhanToteck-Site-Next">Source Code</a>
+						<a href="https://github.com/ArjhanToteck/ArjhanToteck-Site">Source Code</a>
 
 						<br></br>
 
