@@ -29,3 +29,6 @@
 [submodule "projects/playlistHeardle"]
 	path = projects/playlistHeardle
 	url = https://github.com/ArjhanToteck/Playlist-Heardle
+[submodule "projects/initiativeTracker"]
+	path = projects/initiativeTracker
+	url = https://github.com/ArjhanToteck/Initiative-Tracker.git

@@ -40,7 +40,14 @@ export default function Page() {
 			<section>
 				<h1>Projects</h1>
 				<br />
-				<div id="projects" style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center", margin: "auto", width: "85%" }}>
+				<div id="projects" style={{
+					display: "inline-flex",
+					flexWrap: "wrap",
+					justifyContent: "center",
+					gap: "10px",
+					margin: "auto",
+					width: "85%"
+				}}>
 					{projects.map((project, index) => (
 						<Project key={index} project={project} />
 					))}
@@ -51,7 +58,7 @@ export default function Page() {
 }
 
 function Project({ project }) {
-	const { name, path, thumbnailAlt, description, absolutePath } = project || {};
+	const { name, path, globalThumbnail, thumbnailAlt, description, absolutePath } = project || {};
 
 	let adjustedPath;
 
@@ -62,6 +69,15 @@ function Project({ project }) {
 		adjustedPath = "projects/" + path;
 	}
 
+	// by default thumbnails are at the project paths
+	let thumbnailPath = `/projects/${path}/thumbnail.png`;
+
+	// if a global thumbnail is specified, it's stored in a global thumbnail folder instead
+	// this is meant for external projects like GitHub repos or Itch publications that won't have their own submodule
+	if (globalThumbnail) {
+		thumbnailPath = `/thumbnails/${globalThumbnail}.png`
+	}
+
 	return (
 		<div style={{ width: "300px" }}>
 			<h2>
@@ -69,7 +85,7 @@ function Project({ project }) {
 			</h2>
 
 			<a href={adjustedPath}>
-				<Image width="300" height="170" src={`/projects/${path}/thumbnail.png`} alt={thumbnailAlt} />
+				<Image width="300" height="170" src={thumbnailPath} alt={thumbnailAlt} />
 			</a>
 			<h5>{description}</h5>
 		</div>
