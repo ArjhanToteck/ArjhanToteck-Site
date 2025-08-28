@@ -3,16 +3,53 @@
 import projects from "./projects";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Page() {
+	const projectsRef = useRef(null);
+
+	useEffect(() => {
+		if (!projectsRef.current) return;
+
+		function alignTitles() {
+			const container = projectsRef.current;
+			const titles = container.querySelectorAll(".projectTitle");
+			if (!titles || titles.length === 0) return;
+
+			// reset first so we measure natural heights
+			titles.forEach((t) => (t.style.minHeight = "0px"));
+
+			// compute max height
+			let max = 0;
+			titles.forEach((t) => {
+				const h = t.offsetHeight;
+				if (h > max) max = h;
+			});
+
+			// apply max as minHeight to all titles
+			titles.forEach((t) => (t.style.minHeight = `${max}px`));
+		}
+
+		// initial alignment
+		alignTitles();
+
+		// re-run on window resize
+		window.addEventListener("resize", alignTitles);
+
+		// observe DOM changes inside projects container (in case thumbnails or titles change)
+		const observer = new MutationObserver(alignTitles);
+		observer.observe(projectsRef.current, { subtree: true, childList: true, characterData: true });
+
+		return () => {
+			window.removeEventListener("resize", alignTitles);
+			observer.disconnect();
+		};
+	}, [projectsRef, projects]);
 
 	return (
 		<main>
 			<section className="red">
-				<h1 style={{ fontSize: "75px" }}>
-					Welcome.
-				</h1>
+				<h1 style={{ fontSize: "75px" }}>Welcome.</h1>
 				<h2 style={{ textAlign: "center" }}>
 					I'm Arjhan. I make stuff sometimes. Sometimes it's good, too.
 					<br />
@@ -24,13 +61,19 @@ export default function Page() {
 					Server Statuses
 				</h2>
 
-				<p>This site uses various servers to run. Since I'm a broke teenager, they're all free services, so sometimes they may be asleep and take a bit to wake back up. Projects that use websockets, like the chat-based ones, may take an especially long time to load when asleep because of this.</p>
+				<p>
+					This site uses various servers to run. Since I'm a broke teenager, they're all free services,
+					so sometimes they may be asleep and take a bit to wake back up. Projects that use websockets,
+					like the chat-based ones, may take an especially long time to load when asleep because of this.
+				</p>
 
 				<ul style={{ alignContent: "center", textAlign: "center", listStyleType: "none" }}>
-					<li> Next.js Server: <ServerStatus currentServer={true} /> </li>
-					<li> Processing Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_PROCESSING_SERVER} /> </li>
-					<li> Socket.IO Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_SOCKETIO_SERVER} /> </li>
-					<li> PocketBase Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_POCKETBASE_SERVER} /> </li>
+					<li>
+						Next.js Server: <ServerStatus currentServer={true} />
+					</li>
+					<li>Processing Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_PROCESSING_SERVER} /></li>
+					<li>Socket.IO Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_SOCKETIO_SERVER} /></li>
+					<li>PocketBase Server: <ServerStatus endpoint={process.env.NEXT_PUBLIC_POCKETBASE_SERVER} /></li>
 				</ul>
 				<br />
 			</section>
@@ -40,14 +83,19 @@ export default function Page() {
 			<section>
 				<h1>Projects</h1>
 				<br />
-				<div id="projects" style={{
-					display: "inline-flex",
-					flexWrap: "wrap",
-					justifyContent: "center",
-					gap: "10px",
-					margin: "auto",
-					width: "85%"
-				}}>
+				<div
+					id="projects"
+					ref={projectsRef}
+					style={{
+						display: "grid",
+						gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+						gap: "10px",
+						rowGap: "15px",
+						margin: "auto",
+						width: "85%",
+						alignItems: "start", // ensure cards align to the top of the grid row
+					}}
+				>
 					{projects.map((project, index) => (
 						<Project key={index} project={project} />
 					))}
@@ -60,45 +108,40 @@ export default function Page() {
 function Project({ project }) {
 	const { name, path, globalThumbnail, thumbnailAlt, description, absolutePath } = project || {};
 
-	let adjustedPath;
-
-	// use absolute path if present
-	if (absolutePath) {
-		adjustedPath = absolutePath;
-	} else {
-		adjustedPath = "projects/" + path;
-	}
-
-	// by default thumbnails are at the project paths
-	let thumbnailPath = `/projects/${path}/thumbnail.png`;
-
-	// if a global thumbnail is specified, it's stored in a global thumbnail folder instead
-	// this is meant for external projects like GitHub repos or Itch publications that won't have their own submodule
-	if (globalThumbnail) {
-		thumbnailPath = `/thumbnails/${globalThumbnail}.png`
-	}
+	const adjustedPath = absolutePath ? absolutePath : "projects/" + path;
+	const thumbnailPath = globalThumbnail ? `/thumbnails/${globalThumbnail}.png` : `/projects/${path}/thumbnail.png`;
 
 	return (
-		<div style={{ width: "300px" }}>
-			<h2>
+		<div
+			style={{
+				width: "300px",
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				textAlign: "center",
+			}}
+		>
+
+			<h2 className="projectTitle" style={{ width: "100%", margin: "0 8px" }}>
 				{name}
 			</h2>
 
-			<a href={adjustedPath}>
-				<Image width="300" height="170" src={thumbnailPath} alt={thumbnailAlt} />
+			<a href={adjustedPath} style={{ marginTop: "10px" }}>
+				<Image width={300} height={170} src={thumbnailPath} alt={thumbnailAlt || name} />
 			</a>
-			<h5>{description}</h5>
+
+			<div style={{ marginTop: "8px", width: "100%" }}>
+				<h5 style={{ margin: 0 }}>{description}</h5>
+			</div>
 		</div>
-	)
+	);
 }
 
 function ServerStatus({ endpoint = null, currentServer = false }) {
-	// if we know it's the current server we can just default 
-	const [healthMessage, setHealthMessage] = useState("Loading...");
-	const [healthColor, setHealthColor] = useState("yellow");
+	const [healthMessage, setHealthMessage] = React.useState("Loading...");
+	const [healthColor, setHealthColor] = React.useState("yellow");
 
-	useEffect(() => {
-		// if it's the current server we know it's working
+	React.useEffect(() => {
 		if (currentServer) {
 			setHealthMessage("Healthy");
 			setHealthColor("green");
@@ -107,9 +150,7 @@ function ServerStatus({ endpoint = null, currentServer = false }) {
 		}
 	}, [endpoint, currentServer]);
 
-	return (
-		<strong className="textOutline" style={{ color: healthColor }}>{healthMessage}</strong>
-	);
+	return <strong className="textOutline" style={{ color: healthColor }}>{healthMessage}</strong>;
 
 	async function checkServerStatus(endpoint) {
 		try {
@@ -121,7 +162,6 @@ function ServerStatus({ endpoint = null, currentServer = false }) {
 
 			const data = await response.json();
 
-			// TODO: probably don't wanna use a magic string, but that's what works with pocketbase
 			if (data.message == "API is healthy." || data.healthy) {
 				setHealthMessage("Healthy");
 				setHealthColor("green");
