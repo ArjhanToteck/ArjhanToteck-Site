@@ -39,7 +39,7 @@ export default function Page() {
 		return () => {
 			window.removeEventListener("resize", alignTitles);
 		};
-	}, [projectsRef, projects]);
+	}, [projectsRef]);
 
 	return (
 		<main>
