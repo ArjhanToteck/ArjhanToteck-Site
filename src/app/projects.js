@@ -22,7 +22,7 @@ const projects = [
 		name: "da Vinci Machine",
 		path: "daVinciMachine",
 		thumbnailAlt: "A side-by-side comparison of an original digital image and a version drawn with paper and pencil by a 3D printer using grid density.",
-		description: "Trick your 3D printer into drawing pictures. I might actually go to hell for this one."
+		description: "Trick your 3D printer into drawing pictures."
 	},
 	{
 		name: "Playlist Heardle",
