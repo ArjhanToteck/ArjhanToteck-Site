@@ -33,16 +33,11 @@ export default function Page() {
 		// initial alignment
 		alignTitles();
 
-		// re-run on window resize
+		// rerun on window resize
 		window.addEventListener("resize", alignTitles);
-
-		// observe DOM changes inside projects container (in case thumbnails or titles change)
-		const observer = new MutationObserver(alignTitles);
-		observer.observe(projectsRef.current, { subtree: true, childList: true, characterData: true });
 
 		return () => {
 			window.removeEventListener("resize", alignTitles);
-			observer.disconnect();
 		};
 	}, [projectsRef, projects]);
 
@@ -92,14 +87,15 @@ export default function Page() {
 						gap: "10px",
 						rowGap: "15px",
 						margin: "auto",
-						width: "85%",
-						alignItems: "start", // ensure cards align to the top of the grid row
+						width: "85%"
 					}}
 				>
 					{projects.map((project, index) => (
 						<Project key={index} project={project} />
 					))}
 				</div>
+				<br />
+				<br />
 			</section>
 		</main>
 	);

@@ -15,7 +15,7 @@ const projects = [
 		name: "FantasyNav",
 		absolutePath: "https://github.com/ArjhanToteck/Fantasy-Nav",
 		globalThumbnail: "fantasyNav",
-		thumbnailAlt: "",
+		thumbnailAlt: "A screenshot of the app showing various buildings in a fantasy style.",
 		description: "An android app that turns the world into a fantasy map."
 	},
 	{
@@ -142,5 +142,7 @@ const projects = [
 		description: "This chatroom was made for an online game called \"Werewolf.\""
 	}
 ];
+
+// TODO: uncomment old projects when they're remodeled
 
 export default projects;
