@@ -2,7 +2,7 @@ const projects = [
 	{
 		name: "Sign Data Generator",
 		path: "signDataGenerator",
-		thumbnailAlt: "A demonstration of Dwayne Johnson performing a hand gesture.",
+		thumbnailAlt: "A demonstration of Dwayne \"The Rock\" Johnson performing a hand gesture.",
 		description: "During a programming competition, my team worked on a game controlled by ASL signs. I made this program to detect hand positions and create training data for our AI model. It's cool to play around with."
 	},
 	{
@@ -16,7 +16,7 @@ const projects = [
 		absolutePath: "https://github.com/ArjhanToteck/Fantasy-Nav",
 		globalThumbnail: "fantasyNav",
 		thumbnailAlt: "A screenshot of the app showing various buildings in a fantasy style.",
-		description: "An android app that turns the world into a fantasy map."
+		description: "An Android app that turns the world into a fantasy map."
 	},
 	{
 		name: "da Vinci Machine",
@@ -96,7 +96,7 @@ const projects = [
 		absolutePath: "https://arjhantoteck.itch.io/project-malady",
 		globalThumbnail: "projectMalady",
 		thumbnailAlt: "A bloodstained file folder with a red stamp reading \"Project Malady,\" the cover of the game.",
-		description: "A pretty simple game about disease. It's not my best work and I might add more to it, or I might move on."
+		description: "A pretty simple game about disease. It's not my best work. I might add more to it, or I might move on."
 	},
 	{
 		name: "Enchanting Table Translator",
