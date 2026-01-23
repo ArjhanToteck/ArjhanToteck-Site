@@ -123,12 +123,12 @@ const projects = [
 		thumbnailAlt: "A black and white vector art of a babylonian ziggurat with the text \"Tower of Babel\".",
 		description: "Modern translation software is very far from perfect. This project shows how translating something over and over with them can completely change its meaning."
 	},
-	{
+	/*{
 		name: "Cumulus",
 		path: "cumulus",
 		thumbnailAlt: "A cloud with the text \"Weather.js.\"",
 		description: "A free and easy-to-use API that gets weather data."
-	},
+	},*/
 	/*{
 		name: "Werewolf",
 		path: "werewolf",
