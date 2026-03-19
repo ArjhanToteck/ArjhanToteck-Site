@@ -1,8 +1,4 @@
-import React from "react";
-import { Cite } from "@citation-js/core";
-import "@citation-js/plugin-csl";
-
-export default function ApaReference({
+export default function ApaReferencesPage({
 	type,
 	title = "[No title]",
 	authors = [],
