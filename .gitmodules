@@ -32,3 +32,6 @@
 [submodule "projects/initiativeTracker"]
 	path = projects/initiativeTracker
 	url = https://github.com/ArjhanToteck/Initiative-Tracker.git
+[submodule "projects/musicPreferencesArticle"]
+	path = projects/musicPreferencesArticle
+	url = https://github.com/ArjhanToteck/Music-Preferences-Article
