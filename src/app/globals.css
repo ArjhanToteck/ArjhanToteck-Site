@@ -177,6 +177,7 @@ hr {
 
 table {
 	border-collapse: collapse;
+	font-size: 10pt;
 }
 
 td,
@@ -201,7 +202,7 @@ tr:nth-child(even) {
 	margin-top: 0;
 }
 
-.apa .abstract {
+.apa .noIndent {
 	text-indent: 0;
 }
 

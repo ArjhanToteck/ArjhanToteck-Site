@@ -1,11 +1,9 @@
+import ApaFigureHeader from "@/src/components/ApaFigureHeader";
 import ApaReference from "@/src/components/ApaReference";
-import InTextCitation from "@/src/components/InTextCitation";
 import BibtexReferenceMap from "@/src/lib/BibtexReferenceMap";
 
-// TODO: add tables, add all references, add in-text citation links
+// TODO: add in-text citation components
 const referenceMap = BibtexReferenceMap.loadReferencesFromFilePath("public/projects/musicPreferencesArticle/references.bib");
-
-console.log(referenceMap.referenceMap);
 
 export default function Page() {
 
@@ -17,7 +15,7 @@ export default function Page() {
 			<section>
 				<h2>Abstract</h2>
 
-				<p className="abstract">
+				<p className="noIndent">
 					This study aimed to investigate how one’s habits across music streaming and online messaging may be related. To do so, the researcher analyzed public messages from 2,426 Discord users, also retrieving Spotify playlist data from those who had an account linked on their profiles. Pearson correlation tests demonstrated various weak yet statistically significant linear relationships between variables across the categories of Discord message and Spotify playlist data. Most of the relationships involved correlations between parts of speech or message complexity in Discord messages and various Spotify metrics. Some of these relationships may be explained by confounding variables such as personality traits, although further research is required to confirm this hypothesis. The findings may be applicable to improving music recommendation algorithms or in fields such as marketing and social research.
 				</p>
 
@@ -57,7 +55,7 @@ export default function Page() {
 					To start, there is a vast body of literature discussing the various influences and predictors involved in music preference. Many articles specifically analyze personality and music preference.
 				</p>
 				<p>
-					For example, a meta-analysis by <InTextCitation text="Schäfer & Mehlhorn (2017)" bibtexKey="Schfer2017" /> synthesized the data from 28 studies and 263,196 participants, mapping it onto two dimensions of personality (the Big Five plus sensation seeking) and music preference (5 broad genre factors). The authors found that the relationship for most variables across both categories are very weak. Still, they found the following statistically significant positive correlations: agreeableness with unpretentious genres (like country or rock music), extroversion with contemporary music, openness with mellow music, openness with sophisticated music, openness with intense music, and sensation seeking with intense music.
+					For example, a meta-analysis by Schäfer & Mehlhorn (2017) synthesized the data from 28 studies and 263,196 participants, mapping it onto two dimensions of personality (the Big Five plus sensation seeking) and music preference (5 broad genre factors). The authors found that the relationship for most variables across both categories are very weak. Still, they found the following statistically significant positive correlations: agreeableness with unpretentious genres (like country or rock music), extroversion with contemporary music, openness with mellow music, openness with sophisticated music, openness with intense music, and sensation seeking with intense music.
 				</p>
 				<p>
 					An empirical study by Flannery & Woolhouse (2021) similarly compared the Big Five personality traits with musical preference, but using acoustic factors rather than genres. In the study, 90 participants were assessed on their personality and asked to rate their preference for various musical stimuli. Using ANOVA for statistical analysis, the researchers found that most personality variables had very low or non-existent relationships with music preference. There were some exceptions where weak yet statistically significant relationships were found: participants with high agreeableness rated music higher in general, participants with low agreeableness to preferred higher tempos, participants with low conscientiousness preferred major mode, participants with low conscientiousness preferred fast tempo, participants with low extroversion preferred piano dynamics, participants with high extroversion preferred major mode, participants with high extroversion preferred high registers, participants with low extroversion preferred fast tempo, participants with high neuroticism preferred high register, participants with low neuroticism preferred fast tempo, and participants with high openness preferred piano dynamics.
@@ -69,7 +67,52 @@ export default function Page() {
 					In summary, much existing literature suggests that music preferences and personality traits have statistically significant relationships, although many of them are weak. A summary of the relationships suggested by the aforementioned articles is as displayed on Table 1.
 				</p>
 
-				{/* TODO: insert tables */}
+				<ApaFigureHeader label="Table 1" title="Relationships Between Personality Traits and Preferred Music Features" />
+
+				<table>
+					<thead>
+						<tr>
+							<th>Personality Trait</th>
+							<th>Direction</th>
+							<th>Music Feature</th>
+							<th>Citation</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Agreeableness</td><td>Positive</td><td>Unpretentious music</td><td>Schäfer & Mehlhorn, 2017</td></tr>
+						<tr><td>Agreeableness</td><td>Positive</td><td>Higher music ratings overall</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Agreeableness</td><td>Positive</td><td>Country</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Agreeableness</td><td>Positive</td><td>Folk</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Agreeableness</td><td>Negative</td><td>Fast tempo</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Conscientiousness</td><td>Negative</td><td>Major mode</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Conscientiousness</td><td>Negative</td><td>Fast tempo</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Conscientiousness</td><td>Negative</td><td>Folk</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Conscientiousness</td><td>Negative</td><td>Alternative</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Contemporary music</td><td>Schäfer & Mehlhorn, 2017</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Major mode</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>High register</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>R&B</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Rap</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>Piano dynamics</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>Fast tempo</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Mellow music</td><td>Schäfer & Mehlhorn, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Sophisticated music</td><td>Schäfer & Mehlhorn, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Intense music</td><td>Schäfer & Mehlhorn, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Piano dynamics</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>New age</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Classical</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Blues</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Country</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>World</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Folk</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Jazz</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Openness</td><td>Positive</td><td>Alternative</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>High register</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Alternative</td><td>Ferwerda, Tkalcic, & Schedl, 2017</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Fast tempo</td><td>Flannery & Woolhouse, 2021</td></tr>
+						<tr><td>Sensation seeking</td><td>Positive</td><td>Intense music</td><td>Schäfer & Mehlhorn, 2017</td></tr>
+					</tbody>
+				</table>
 			</section>
 
 			<section>
@@ -87,6 +130,61 @@ export default function Page() {
 				<p>
 					In summary, the literature suggests that there are many ways in which a person’s writing, whether in emails, texts, or essays can be used as a predictor for their personality traits. A summary of the relationships identified by the literature on Table 2.
 				</p>
+
+				<ApaFigureHeader label="Table 2" title="Relationships Between Personality Traits and Linguistic Features" />
+
+				<table>
+					<thead>
+						<tr>
+							<th>Personality Trait</th>
+							<th>Direction</th>
+							<th>Linguistic Feature</th>
+							<th>Citation</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Agreeableness</td><td>Positive</td><td>pers-vfin bigrams</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Agreeableness</td><td>Positive</td><td>ptcl-vfin bigrams</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Agreeableness</td><td>Negative</td><td>Swear words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Agreeableness</td><td>Negative</td><td>Negative-valence words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Agreeableness</td><td>Negative</td><td>Death-related words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Agreeableness</td><td>Negative</td><td>Health-related words in males</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Expansions</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Sex words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Personal pronouns (esp. 1st person singular)</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Longer words in females</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>Conjunctions</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>conj-vbn bigrams</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Extroversion</td><td>Positive</td><td>conj-adv bigrams</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>Anxiety-related words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>Aggression-related words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>Negative-valence words in males</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>pers-vfin bigrams</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>Past participles</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Extroversion</td><td>Negative</td><td>conj-vbn-prn trigrams</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Negative-valence words</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Acronyms</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Emoticons</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>g-dropping in females</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Conjunctions</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>Pronouns</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>adj-prn-vbn trigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>adj-prn bigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>vbn-prn-o trigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Positive</td><td>vbn-adj-conj trigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>Function words in females</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>Prepositions in females</td><td>Holtgraves, 2011</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>adj-noun bigrams</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>noun-prep bigrams</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>Nouns</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>Adjectives</td><td>Oberlander & Gill, 2004</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>prn-adj bigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>prn-adb bigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>adb-prn bigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Neuroticism</td><td>Negative</td><td>conj-adv bigram</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+						<tr><td>Openness</td><td>Negative</td><td>noun-prep bigrams</td><td>Litvinova, Seredin, & Litvinova, 2015</td></tr>
+					</tbody>
+				</table>
 			</section>
 
 			<section>
@@ -171,11 +269,96 @@ export default function Page() {
 					A third Python script was used to analyze the Spotify profiles of every user in the stratum with linked accounts. The script used the official Spotify API to find every track on a user’s profile. Tracks were counted multiple times if they appeared multiple times across or within playlists.
 				</p>
 				<p>
-					Table 4 displays the metrics retrieved from the Spotify API for each of these tracks, as described by the Spotify Web API Reference (Spotify, n.d.).
+					Table 3 displays the metrics retrieved from the Spotify API for each of these tracks, as described by the Spotify Web API Reference (Spotify, n.d.).
 				</p>
+
+				<ApaFigureHeader label="Table 3" title="Spotify API Variables" />
+
+				<table>
+					<thead>
+						<tr>
+							<th>Variable</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>duration_ms</td>
+							<td>The length of the track in milliseconds.</td>
+						</tr>
+						<tr>
+							<td>explicit</td>
+							<td>Whether the track has explicit lyrics (true = explicit; false = not explicit or unknown).</td>
+						</tr>
+						<tr>
+							<td>popularity</td>
+							<td>A value between 0 and 100 indicating track popularity, calculated algorithmically based primarily on total play count and recency of plays. Songs with high current play frequency score higher than those popular in the past. Duplicate releases of the same track are rated independently, and artist and album popularity are derived from track popularity. The value may lag actual popularity by a few days and is not updated in real time.</td>
+						</tr>
+					</tbody>
+				</table>
+
 				<p>
-					ReccoBeats, a third-party API, was also used to retrieve more audio-specific data about each track. The metrics it provided as displayed on Table 5, as described by its documentation (ReccoBeats, n.d.).
+					ReccoBeats, a third-party API, was also used to retrieve more audio-specific data about each track. The metrics it provided as displayed on Table 4, as described by its documentation (ReccoBeats, n.d.).
 				</p>
+
+
+				<ApaFigureHeader label="Table 4" title="ReccoBeats API Variables" />
+
+				<table>
+					<thead>
+						<tr>
+							<th>Variable</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>acousticness</td>
+							<td>A confidence measure from 0.0 to 1.0 indicating how acoustic a track sounds. Higher values represent greater confidence that the music consists of natural, organic sounds rather than synthetic or electronic elements.</td>
+						</tr>
+						<tr>
+							<td>danceability</td>
+							<td>A score from 0.0 to 1.0 indicating how suitable a track is for dancing, based on factors such as tempo, rhythm, beat consistency, and energy. Higher values indicate greater danceability.</td>
+						</tr>
+						<tr>
+							<td>energy</td>
+							<td>A measure from 0.0 to 1.0 of the intensity and liveliness of a track. Higher values represent more energetic, intense music, influenced by factors such as tempo and loudness.</td>
+						</tr>
+						<tr>
+							<td>instrumentalness</td>
+							<td>Predicts the likelihood that a track contains no vocals. Values closer to 1.0 indicate a higher probability of instrumental content. Values above 0.5 typically represent instrumental tracks, with confidence increasing as the value approaches 1.0.</td>
+						</tr>
+						<tr>
+							<td>key</td>
+							<td>The musical key of the track, represented as an integer using standard pitch class notation (e.g., 0 = C, 1 = C♯/D♭, 2 = D). A value of −1 indicates that no key was detected.</td>
+						</tr>
+						<tr>
+							<td>liveness</td>
+							<td>A measure of the likelihood that the track was performed live, based on the detection of an audience. Higher values indicate greater probability of a live recording, with values above 0.8 providing strong evidence of liveness.</td>
+						</tr>
+						<tr>
+							<td>loudness</td>
+							<td>The overall loudness of a track in decibels (dB), averaged across the entire track. Typical values range from −60 to 0 dB and are useful for comparing relative loudness between tracks.</td>
+						</tr>
+						<tr>
+							<td>mode</td>
+							<td>Indicates whether the track is in a major or minor mode, where 1 represents major and 0 represents minor.</td>
+						</tr>
+						<tr>
+							<td>speechiness</td>
+							<td>A measure of the presence of spoken words in a track. Values above 0.66 suggest primarily spoken content, values between 0.33 and 0.66 indicate a mix of speech and music (e.g., rap), and values below 0.33 indicate predominantly musical content.</td>
+						</tr>
+						<tr>
+							<td>tempo</td>
+							<td>The estimated overall tempo of a track in beats per minute (BPM), typically ranging from 0 to 250.</td>
+						</tr>
+						<tr>
+							<td>valence</td>
+							<td>A measure from 0.0 to 1.0 of the emotional tone of a track. Higher values indicate a more positive, happy, or uplifting mood, while lower values indicate a more negative or somber emotional tone.</td>
+						</tr>
+					</tbody>
+				</table>
+
 				<p>
 					Once this data was retrieved for each track in a playlist, the Python script calculated and stored the mean, standard deviation, min, max, median, inter-quartile range, and skewness for each metric.
 				</p>
@@ -197,8 +380,90 @@ export default function Page() {
 					Several libraries, algorithms, and machine learning models were used to analyze user messages. The first among these was VADER, a rule-based model for sentiment analysis model developed by Hutto &amp; Gilbert (2014). It was specifically fine-tuned for social media analysis, which makes it appropriate for this use case. To detect profanity, a linear SVM model called Alt-profanity-check (Mistriotis et al., n.d.) was used. Textstat (Ward et al., n.d.), a text complexity analysis library, was also used. Finally, TextBlob (Keen et al., n.d.), a text processing library was used for both sentiment analysis and to identify parts of speech in message data, which was received for several metrics.
 				</p>
 				<p>
-					Using these resources, along with other standard Python libraries and operations, the metrics described in Table 6 were calculated for messages.
+					Using these resources, along with other standard Python libraries and operations, the metrics described in Table 5 were calculated for messages.
 				</p>
+
+				<ApaFigureHeader label="Table 5" title="Message Variables" />
+
+				<table>
+					<thead>
+						<tr>
+							<th>Variable</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>alpha_ratio</td>
+							<td>The ratio of alphabetic characters to total characters in a message. Alphabetic characters are defined using Python’s str.isalpha() method, which includes letters from any language. Values range from 0 (no alphabetic characters) to 1 (only alphabetic characters).</td>
+						</tr>
+						<tr>
+							<td>ascii_ratio</td>
+							<td>The ratio of ASCII characters to total characters in a message, ranging from 0 (no ASCII characters) to 1 (only ASCII characters).</td>
+						</tr>
+						<tr>
+							<td>profanity_probability</td>
+							<td>The probability (0 to 1) that the Alt-profanity-check model detected profanity in a message, where higher values indicate greater likelihood of profanity.</td>
+						</tr>
+						<tr>
+							<td>textblob_polarity</td>
+							<td>A lexicon-based measure of sentiment polarity computed by TextBlob, ranging from −1 (very negative sentiment) to 1 (very positive sentiment).</td>
+						</tr>
+						<tr>
+							<td>textblob_sentence_count</td>
+							<td>The number of sentences detected in a message by TextBlob.</td>
+						</tr>
+						<tr>
+							<td>textblob_subjectivity</td>
+							<td>A lexicon-based measure of subjectivity computed by TextBlob, ranging from 0 (very objective) to 1 (very subjective).</td>
+						</tr>
+						<tr>
+							<td>textblob_word_count</td>
+							<td>The number of words detected in a message by TextBlob.</td>
+						</tr>
+						<tr>
+							<td>textstat_automated_readability_index</td>
+							<td>The estimated U.S. grade level required to understand the message, based on the Automated Readability Index (Smith & Senter, 1967) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>textstat_coleman_liau_index</td>
+							<td>The estimated U.S. grade level required to understand the message, based on the Coleman–Liau Index (Coleman & Liau, 1975) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>textstat_dale_chall_readability_score</td>
+							<td>A readability score from 0 to 9.9 based on the Dale–Chall Readability Score (Chall & Dale, 1995) as calculated by Textstat. Higher values indicate lower readability.</td>
+						</tr>
+						<tr>
+							<td>textstat_difficult_word_ratio</td>
+							<td>The estimated proportion of difficult words in the message, based on the Dale–Chall Readability Score (Chall & Dale, 1995) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>textstat_flesch_kincaid_grade</td>
+							<td>The estimated U.S. grade level required to understand the message, based on the Flesch–Kincaid Grade Level (Kincaid et al., 1975) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>textstat_flesch_reading_ease</td>
+							<td>A score from 0 to 100 indicating how easy the message is to read, based on the Flesch Reading Ease formula (Flesch, 1948) as calculated by Textstat. Higher values indicate easier readability.</td>
+						</tr>
+						<tr>
+							<td>textstat_gunning_fog</td>
+							<td>The estimated U.S. grade level required to understand the message, based on the Gunning Fog Index (Gunning, 1952) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>textstat_linsear_write_formula</td>
+							<td>The estimated U.S. grade level required to understand the message, based on the Linsear Write Formula (O'Hayre, 1966) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>textstat_smog_index</td>
+							<td>The estimated U.S. grade level required to understand the message, based on the SMOG Index (McLaughlin, 1969) as calculated by Textstat.</td>
+						</tr>
+						<tr>
+							<td>uppercase_ratio</td>
+							<td>The ratio of uppercase alphabetic characters to total alphabetic characters in a message. Alphabetic characters are defined using Python’s str.isalpha() method. Values range from 0 (no uppercase letters) to 1 (all alphabetic characters uppercase).</td>
+						</tr>
+					</tbody>
+				</table>
+
 				<p>
 					In addition to the variables described above, the unigram, bigram, and trigram ratios of parts of speech were calculated using TextBlob’s parts of speech tagging algorithm. In other words, for each message, a metric was created for the ratios of each part of speech unigram, bigram, and trigram relative to all sequences of the same length.
 				</p>
@@ -223,6 +488,10 @@ export default function Page() {
 
 			<section>
 				<h2>Results</h2>
+
+				<ApaFigureHeader label="Figure 1" title="Heatmap of Pearson Correlations Between Message and Music Variables" />
+
+				<img src="https://raw.githubusercontent.com/ArjhanToteck/Music-Preferences-as-Predictors-of-Online-Messaging-Activity-Data-and-Code/refs/heads/main/published_data/Pearson_Correlations_Between_Message_and_Music_Variables_Wide.png" />
 
 				<p>
 					After filtering the resulting correlation data for relationships with p &lt; 0.05 and |r| &gt; 0.2, several weak, yet statistically significant correlations were found.
