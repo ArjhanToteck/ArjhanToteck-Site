@@ -1,5 +1,6 @@
 import ApaFigureHeader from "@/src/components/ApaFigureHeader";
 import ApaReference from "@/src/components/ApaReference";
+import ApaReferencesList from "@/src/components/ApaReferencesList";
 import BibtexReferenceMap from "@/src/lib/BibtexReferenceMap";
 
 // TODO: add in-text citation components, add disclaimer about how it's independent and not peer-reviewed, add button to copy citation, add button to download pdf
@@ -611,21 +612,7 @@ export default function Page() {
 				</p>
 			</section>
 
-			<section>
-				<h2>References</h2>
-
-				{
-					Object.keys(referenceMap.referenceMap)
-						// make sure its sorted
-						.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-						.map(key =>
-
-							<span id={key} key={key}>
-								<ApaReference bibtex={referenceMap.referenceMap[key]} />
-							</span>
-						)
-				}
-			</section>
+			<ApaReferencesList referenceMap={referenceMap} />
 
 			<br />
 
