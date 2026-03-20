@@ -10,9 +10,10 @@ export default function Page() {
 	return (
 		<main className="apa">
 
-			<h1>Music Preferences as Predictors of Online Messaging Activity</h1>
-
 			<section>
+
+				<h1>Music Preferences as Predictors of Online Messaging Activity</h1>
+
 				<h2>Abstract</h2>
 
 				<p className="noIndent">
