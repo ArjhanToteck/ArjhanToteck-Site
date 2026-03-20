@@ -2,7 +2,7 @@ const projects = [
 	{
 		name: "Music Preferences as Predictors of Online Messaging Activity",
 		path: "musicPreferencesArticle",
-		thumbnailAlt: "A demonstration of Dwayne \"The Rock\" Johnson performing a hand gesture.",
+		thumbnailAlt: "A heatmap showing correlations between music- and text-related variables.",
 		description: "An independent research project using automated data scraping and analysis to investigate to what extent music streaming and online messaging habits can be used as predictors of each other."
 	},
 	{
