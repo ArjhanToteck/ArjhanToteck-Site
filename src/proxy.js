@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 const CORS_ALLOWED_DOMAINS = JSON.parse(process.env.CORS_ALLOWED_DOMAINS);
 
-export async function middleware(request) {
+export async function proxy(request) {
 	const response = NextResponse.next();
 
 	// get request origin
