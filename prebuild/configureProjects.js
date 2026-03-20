@@ -38,6 +38,11 @@ export default function configureProjects() {
 
 					copyPath(path + "/public/**", "public/projects/" + item);
 				}
+
+				// lib folder
+				if (existsSync(path + "/lib")) {
+					copyPath(path + "/lib/**", "src/lib/projects/" + item);
+				}
 			}
 		});
 	});
