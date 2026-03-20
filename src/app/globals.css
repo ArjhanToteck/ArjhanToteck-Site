@@ -177,6 +177,7 @@ hr {
 
 table {
 	border-collapse: collapse;
+	font-size: 10pt;
 }
 
 td,
@@ -189,6 +190,32 @@ th {
 tr:nth-child(even) {
 	background-color: var(--textColor);
 	color: var(--darkGray);
+}
+
+.apa section {
+	text-indent: 3em;
+	line-height: 2;
+	text-align: left;
+	align-items: normal;
+	overflow-wrap: break-word;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.apa .noIndent {
+	text-indent: 0;
+}
+
+.apa h2,
+.apa h1 {
+	text-align: center;
+	align-self: center;
+}
+
+.apa h2,
+.apa h1,
+.apa h3 {
+	text-indent: 0;
 }
 
 /* highlight.js atom one dark highlighting (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css) */

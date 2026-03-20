@@ -1,4 +1,4 @@
-import { existsSync, readdir, statSync } from "fs";
+import { existsSync, readdir, statSync, rmSync } from "fs";
 import cpx from "cpx2";
 
 const projectFolder = "./projects/";
@@ -11,8 +11,15 @@ export default function configureProjects() {
 			return;
 		}
 
+		// clear old project folder copies
+		deleteFolder("src/app/projects");
+		deleteFolder("src/pages/api/projects");
+		deleteFolder("public/projects");
+		deleteFolder("src/lib/projects");
+
 		// loop through items
 		items.forEach(item => {
+			// get path for current project
 			const path = projectFolder + item;
 
 			// get item info
@@ -38,6 +45,11 @@ export default function configureProjects() {
 
 					copyPath(path + "/public/**", "public/projects/" + item);
 				}
+
+				// lib folder
+				if (existsSync(path + "/lib")) {
+					copyPath(path + "/lib/**", "src/lib/projects/" + item);
+				}
 			}
 		});
 	});
@@ -50,4 +62,14 @@ function copyPath(source, destination) {
 	} else {
 		cpx.copySync(source, destination);
 	}
+}
+
+function deleteFolder(path) {
+	rmSync(path, { recursive: true, force: true }, (err) => {
+		if (err) {
+			console.error("Folder at path", path, "deleted with error:", err);
+		} else {
+			console.log("Folder deleted at path:", path);
+		}
+	});
 }

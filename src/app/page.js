@@ -46,9 +46,11 @@ export default function Page() {
 			<section className="red">
 				<h1 style={{ fontSize: "75px" }}>Welcome.</h1>
 				<h2 style={{ textAlign: "center" }}>
-					I'm Arjhan. I make stuff sometimes. Sometimes it's good, too.
+					Hey, I'm Alessandro.
 					<br />
-					You should look at some of it.
+					Arjhan's just a username I made as a kid, and now I'm kinda stuck with it.
+					<br />
+					Anyway, I make stuff sometimes. Sometimes it's good, too. You should check it out.
 				</h2>
 
 				<h2 style={{ marginBottom: "0px" }}>
