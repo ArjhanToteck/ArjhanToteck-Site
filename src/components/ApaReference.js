@@ -1,49 +1,32 @@
 import React from "react";
 import { Cite } from "@citation-js/core";
+import "@citation-js/plugin-bibtex";
 import "@citation-js/plugin-csl";
 
-export default function ApaReference({
-	type,
-	title = "[No title]",
-	authors = [],
-	year = "n.d.",
-	journal,
-	volume,
-	issue,
-	pages,
-	publisher,
-	url
-}) {
-	// create csl object
-	const cslData = {
-		type,
-		title,
-		author: authors,
-		issued: { "date-parts": [[year]] },
-		journal,
-		volume,
-		issue,
-		page: pages,
-		publisher,
-		url
-	};
-
+export default function ApaReference({ bibtex }) {
 	// create citation
-	const cite = new Cite(cslData);
+	const cite = new Cite(bibtex);
 
 	const apaCitation = cite.format("bibliography", {
-		format: "text",
+		format: "html",
 		template: "apa",
-	});
+	})
+		// remove randomly generated id to prevent hydration errors
+		.replace(/data-csl-entry-id="[^"]+"/g, "");
 
-	return <span
-		style={{
-			// hanging indent and double spacing
-			paddingLeft: "1.5em",
-			textIndent: "-1.5em",
-			marginBottom: "0.5em",
-		}}
-	>
-		{apaCitation}
-	</span>;
+	// the apa citation never comes from user input so this is probably fine?
+	return (
+		<span
+			style={{
+				// hanging indent
+				paddingLeft: "3em",
+				textIndent: "-3em",
+				// make sure words break if needed
+				overflowWrap: "break-word"
+
+			}}
+
+			dangerouslySetInnerHTML={{ __html: apaCitation }}
+		/>
+	);
 }

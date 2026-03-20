@@ -33,15 +33,18 @@ export default function RootLayout({ children }) {
 					</a>
 				</header>
 				{children}
+
+				<br />
+
 				<footer className="red">
 					<p style={{ textAlign: "center", lineHeight: 1.5 }}>
 						Contact: <a href="mailto:rppfjwwt@duck.com">rppfjwwt@duck.com</a>
 
-						<br></br>
+						<br />
 
 						<a href="https://github.com/ArjhanToteck/ArjhanToteck-Site">Source Code</a>
 
-						<br></br>
+						<br />
 
 						&copy; 2020-{new Date().getFullYear()} ArjhanToteck
 					</p>
