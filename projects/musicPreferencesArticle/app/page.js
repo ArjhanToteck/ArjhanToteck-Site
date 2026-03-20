@@ -491,7 +491,7 @@ export default function Page() {
 
 				<ApaFigureHeader label="Figure 1" title="Heatmap of Pearson Correlations Between Message and Music Variables" />
 
-				<img src="https://raw.githubusercontent.com/ArjhanToteck/Music-Preferences-as-Predictors-of-Online-Messaging-Activity-Data-and-Code/refs/heads/main/published_data/Pearson_Correlations_Between_Message_and_Music_Variables_Wide.png" />
+				<img width="100%" src="https://raw.githubusercontent.com/ArjhanToteck/Music-Preferences-as-Predictors-of-Online-Messaging-Activity-Data-and-Code/refs/heads/main/published_data/Pearson_Correlations_Between_Message_and_Music_Variables_Wide.png" />
 
 				<p>
 					After filtering the resulting correlation data for relationships with p &lt; 0.05 and |r| &gt; 0.2, several weak, yet statistically significant correlations were found.
