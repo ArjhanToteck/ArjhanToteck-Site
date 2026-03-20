@@ -1,8 +1,11 @@
-"use client";
-
 import ApaReference from "@/src/components/ApaReference";
+import InTextCitation from "@/src/components/InTextCitation";
+import BibtexReferenceMap from "@/src/lib/BibtexReferenceMap";
 
 // TODO: add tables, add all references, add in-text citation links
+const referenceMap = BibtexReferenceMap.loadReferencesFromFilePath("public/projects/musicPreferencesArticle/references.bib");
+
+console.log(referenceMap.referenceMap);
 
 export default function Page() {
 
@@ -54,7 +57,7 @@ export default function Page() {
 					To start, there is a vast body of literature discussing the various influences and predictors involved in music preference. Many articles specifically analyze personality and music preference.
 				</p>
 				<p>
-					For example, a meta-analysis by Schäfer & Mehlhorn (2017) synthesized the data from 28 studies and 263,196 participants, mapping it onto two dimensions of personality (the Big Five plus sensation seeking) and music preference (5 broad genre factors). The authors found that the relationship for most variables across both categories are very weak. Still, they found the following statistically significant positive correlations: agreeableness with unpretentious genres (like country or rock music), extroversion with contemporary music, openness with mellow music, openness with sophisticated music, openness with intense music, and sensation seeking with intense music.
+					For example, a meta-analysis by <InTextCitation text="Schäfer & Mehlhorn (2017)" bibtexKey="Schfer2017" /> synthesized the data from 28 studies and 263,196 participants, mapping it onto two dimensions of personality (the Big Five plus sensation seeking) and music preference (5 broad genre factors). The authors found that the relationship for most variables across both categories are very weak. Still, they found the following statistically significant positive correlations: agreeableness with unpretentious genres (like country or rock music), extroversion with contemporary music, openness with mellow music, openness with sophisticated music, openness with intense music, and sensation seeking with intense music.
 				</p>
 				<p>
 					An empirical study by Flannery & Woolhouse (2021) similarly compared the Big Five personality traits with musical preference, but using acoustic factors rather than genres. In the study, 90 participants were assessed on their personality and asked to rate their preference for various musical stimuli. Using ANOVA for statistical analysis, the researchers found that most personality variables had very low or non-existent relationships with music preference. There were some exceptions where weak yet statistically significant relationships were found: participants with high agreeableness rated music higher in general, participants with low agreeableness to preferred higher tempos, participants with low conscientiousness preferred major mode, participants with low conscientiousness preferred fast tempo, participants with low extroversion preferred piano dynamics, participants with high extroversion preferred major mode, participants with high extroversion preferred high registers, participants with low extroversion preferred fast tempo, participants with high neuroticism preferred high register, participants with low neuroticism preferred fast tempo, and participants with high openness preferred piano dynamics.
@@ -341,170 +344,14 @@ export default function Page() {
 			<section>
 				<h2>References</h2>
 
-				<ApaReference
-					bibtex="@inproceedings{Ferwerda2017,
-   author = {Bruce Ferwerda and Marko Tkalcic and Markus Schedl},
-   city = {New York, NY, USA},
-   doi = {10.1145/3079628.3079693},
-   isbn = {9781450346351},
-   booktitle = {Proceedings of the 25th Conference on User Modeling, Adaptation and Personalization},
-   month = {7},
-   pages = {285-288},
-   publisher = {ACM},
-   title = {Personality Traits and Music Genres},
-   year = {2017}
-}
-@article{Schfer2017,
-   author = {Thomas Schäfer and Claudia Mehlhorn},
-   doi = {10.1016/j.paid.2017.04.061},
-   issn = {01918869},
-   journal = {Personality and Individual Differences},
-   month = {10},
-   pages = {265-273},
-   title = {Can personality traits predict musical style preferences? A meta-analysis},
-   volume = {116},
-   year = {2017}
-}
-@article{Flannery2021,
-   abstract = {<p>Personality factors, typically determined by the Big Five Inventory (BFI), have been a primary method for investigating individual preferences in music. While these studies have yielded a number of insights into musical choices, weaknesses exist, owing to the methods by which music is characterized and categorized. For example, musical genre, music-preference dimensions (e.g., reflective and complex), and musical attributes (e.g., strong and mellow), reported within the literature, have arguably produced inconsistent and thus difficult to interpret results. We attempt to circumvent these inconsistencies by classifying music using objectively quantifiable acoustic features that are fundamental to Western music, such as tempo and register. Moreover, it is our contention that the link between musical preference and personality may operate primarily at the level of acoustic features and not at broader categorization levels, such as genre. This study attempts to address this issue. Ninety participants listened to and indicated preference for stimuli that were systematically manipulated by dynamics (attack rate), mode, register, and tempo. Personality was measured using the BFI, allowing for analysis of personality traits and preference for acoustic features. Results supported the link between personality and preference for certain acoustic features. Preference with respect to dynamics was related to openness and extraversion; mode to conscientiousness and extraversion; register to extraversion and neuroticism; and tempo to conscientiousness, extraversion, and neuroticism. Though significant, these associations were relatively weak; therefore, future research could expand the number of manipulated acoustic features. Specific attempts should also aim to disentangle the effects of genre versus acoustic features on musical preferences. Personality–preference relationships at the acoustic-feature level are discussed with respect to music recommender systems and other aspects of the literature.</p>},
-   author = {Maya B. Flannery and Matthew H. Woolhouse},
-   doi = {10.1177/20592043211014014},
-   issn = {2059-2043},
-   journal = {Music \& Science},
-   month = {1},
-   title = {Musical Preference: Role of Personality and Music-Related Acoustic Features},
-   volume = {4},
-   year = {2021}
-}
-@article{Holtgraves2011,
-   author = {Thomas Holtgraves},
-   doi = {10.1016/j.jrp.2010.11.015},
-   issn = {00926566},
-   issue = {1},
-   journal = {Journal of Research in Personality},
-   month = {2},
-   pages = {92-99},
-   title = {Text messaging, personality, and the social context},
-   volume = {45},
-   year = {2011}
-}
-@article{Litvinova2015,
-   author = {T A Litvinova and P V Seredin and O A Litvinova},
-   journal = {Indian Journal of Science and Technology},
-   pages = {93},
-   publisher = {Indian Society for Education and Environment},
-   title = {Using part-of-speech sequences frequencies in a text to predict author personality: a corpus study},
-   volume = {8},
-   year = {2015}
-}
-@inproceedings{Oberlander2004,
-   author = {Jon Oberlander and Alastair J Gill},
-   issue = {26},
-   booktitle = {Proceedings of the annual meeting of the Cognitive Science Society},
-   title = {Individual differences and implicit language: personality, parts-of-speech and pervasiveness},
-   volume = {26},
-   year = {2004}
-}
-@article{Coleman1975,
-   author = {M Coleman and T L Liau},
-   journal = {Journal of Applied Psychology},
-   title = {A computer readability formula designed for machine scoring},
-   year = {1975}
-}
-@book{Chall1995,
-   author = {J S Chall and E Dale},
-   note = {No title provided in source},
-   title = {Readability revisited: The new Dale-Chall readability formula},
-   year = {1995}
-}
-@article{Flesch1948,
-   author = {R Flesch},
-   journal = {Journal of Applied Psychology},
-   title = {A new readability yardstick},
-   year = {1948}
-}
-@book{Gunning1952,
-   author = {R Gunning},
-   note = {No title provided in source},
-   title = {The technique of clear writing},
-   year = {1952}
-}
-@article{McLaughlin1969,
-   author = {G Harry McLaughlin},
-   journal = {Journal of Reading},
-   title = {SMOG grading-a new readability formula},
-   year = {1969}
-}
-@misc{HidalgoDiBlasio2026,
-   author = {A Hidalgo Di Blasio},
-   note = {[Data & code] GitHub},
-   title = {Music preferences as predictors of online messaging activity: Data and code},
-   url = {https://github.com/ArjhanToteck/Music-Preferences-as-Predictors-of-Online-Messaging-Activity-Data-and-Code},
-   year = {2026}
-}
-@inproceedings{Hutto2014,
-   author = {C Hutto and E Gilbert},
-   doi = {10.1609/icwsm.v8i1.14550},
-   booktitle = {Proceedings of the International AAAI Conference on Web and Social Media},
-   title = {VADER: A Parsimonious Rule-Based Model for Sentiment Analysis of Social Media Text},
-   year = {2014}
-}
-@misc{Keennd,
-   author = {P Keen},
-   note = {[Computer software] GitHub},
-   title = {TextBlob (0.7.0)},
-   url = {https://github.com/sloria/textblob}
-}
-@techReport{Kincaid1975,
-   author = {J P Kincaid and R P Fishburne Jr and R L Rogers and B S Chissom},
-   title = {Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel},
-   year = {1975}
-}
-@misc{Mistriotisnd,
-   author = {D Mistriotis},
-   note = {[Computer software] GitHub},
-   title = {Alt-profanity-check (1.7.2)},
-   url = {https://github.com/dimitrismistriotis/alt-profanity-check}
-}
-@article{Pearson1895,
-   author = {K Pearson},
-   journal = {Proceedings of the Royal Society of London},
-   title = {Note on regression and inheritance in the case of two parents},
-   year = {1895}
-}
-@misc{ReccoBeatsnd,
-   author = {ReccoBeats},
-   note = {Retrieved October 23, 2025},
-   title = {Get track's audio features},
-   url = {https://reccobeats.com/docs/apis/get-track-audio-features}
-}
-@techReport{Smith1967,
-   author = {E A Smith and R J Senter},
-   publisher = {Aerospace Medical Research Laboratories, Aerospace Medical Division, Air Force Systems Command},
-   title = {Automated readability index},
-   year = {1967}
-}
-@misc{Spotifynd,
-   author = {Spotify},
-   note = {Retrieved October 23, 2025},
-   title = {GetTrack},
-   url = {https://developer.spotify.com/documentation/web-api/reference/get-track}
-}
-@misc{Wardnd,
-   author = {A Ward},
-   note = {[Computer software] GitHub},
-   title = {Textstat (0.7.11)},
-   url = {https://github.com/shivam5992/textstat}
-}
-@book{OHayre1966,
-   author = {John O'Hayre},
-   publisher = {US Department of the Interior, Bureau of Land Management},
-   title = {Gobbledygook has gotta go},
-   year = {1966}
-}
-"
-				/>
+				{Object.keys(referenceMap.referenceMap).map(key =>
+					<span id={key} key={key}>
+						<ApaReference bibtex={referenceMap.referenceMap[key]} />
+					</span>
+				)}
 			</section>
+
+
 
 			<br />
 
