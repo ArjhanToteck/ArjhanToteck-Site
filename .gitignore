@@ -46,3 +46,4 @@ pb_migrations/
 src/app/projects
 src/pages/api/projects
 public/projects/
+src/lib/projects/
