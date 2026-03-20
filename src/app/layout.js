@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
 
 						<br />
 
-						&copy; 2020-{new Date().getFullYear()} ArjhanToteck
+						&copy; 2020-{new Date().getFullYear()} Alessandro Di Blasio (ArjhanToteck)
 					</p>
 				</footer>
 			</body>

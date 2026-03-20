@@ -2,7 +2,7 @@ import ApaFigureHeader from "@/src/components/ApaFigureHeader";
 import ApaReference from "@/src/components/ApaReference";
 import BibtexReferenceMap from "@/src/lib/BibtexReferenceMap";
 
-// TODO: add in-text citation components
+// TODO: add in-text citation components, add disclaimer about how it's independent and not peer-reviewed
 const referenceMap = BibtexReferenceMap.loadReferencesFromFilePath("public/projects/musicPreferencesArticle/references.bib");
 
 export default function Page() {
